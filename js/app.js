@@ -75,6 +75,16 @@ main.appendChild(section4);
  * 
 */
 
+document.querySelectorAll('.menu__link').forEach(link=>{
+    link.addEventListener('click',e=>{
+        e.preventDefault();
+        const targetId=link.getAttribute('href').slice(1);
+        const targetElement=document.getElementById(targetId);
+        targetElement.scrollIntoView({behavior:'smooth'});
+
+    });
+});
+
 // build the nav
 
 
