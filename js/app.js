@@ -113,7 +113,7 @@ function createSection(sectionId, sectionTitle, para1Text, para2Text) {
     section.setAttribute("data-nav", sectionTitle);
 
     const sectionDiv = document.createElement('div');
-    sectionDiv.classList.add('landing__container');  // Keeping the same class
+    sectionDiv.classList.add('landing__container');  
 
     const sectionHeading = document.createElement('h2');
     sectionHeading.textContent = sectionTitle;
