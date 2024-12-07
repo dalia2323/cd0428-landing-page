@@ -36,17 +36,17 @@ let isScrolling;
 function hideNavbar() {
     let isScrolling;
     // Ensure navbar is initially invisible
-    navbarList.style.display = "block"; 
+    navbarList.style.display = "block";
     window.addEventListener('scroll', () => {
         // Show the navbar when scrolling
-        navbarList.style.display = "block"; 
+        navbarList.style.display = "block";
 
         // Clear the timeout if still scrolling
         clearTimeout(isScrolling);
 
         // Set a timeout to hide the navbar after 2 seconds of no scrolling
         isScrolling = setTimeout(() => {
-            navbarList.style.display = "none"; 
+            navbarList.style.display = "none";
             // Adjust this value based on the navbar height
         }, 2000);
     });
@@ -134,38 +134,38 @@ function createSection(sectionId, sectionTitle, para1Text, para2Text) {
     main.appendChild(section);
 }
 createSection(
-    "section4", 
-    "Section 4", 
+    "section4",
+    "Section 4",
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.",
     "Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non."
 );
 // build the nav
 function buildNav(n) {
-for(let i=1;i<=n;i++){
-    // creating a new list item for each section
-    const newListItem=document.createElement('li');
-    // adding a class to the new list item
-    newListItem.classList.add('menu__item');
-    // adding an anchor tag to the new list item
-    const newAnchor=document.createElement('a');
-    newAnchor.classList.add('menu__link');
-    // adding the text to the anchor tag
-    newAnchor.textContent=`Section${i}`;
-    // adding the href to the anchor tag
-    newAnchor.href=`#section${i}`;
-    newListItem.appendChild(newAnchor);
-    // appending the new list item to the navbar list
-    navbarList.appendChild(newListItem);
-}
+    for (let i = 1; i <= n; i++) {
+        // creating a new list item for each section
+        const newListItem = document.createElement('li');
+        // adding a class to the new list item
+        newListItem.classList.add('menu__item');
+        // adding an anchor tag to the new list item
+        const newAnchor = document.createElement('a');
+        newAnchor.classList.add('menu__link');
+        // adding the text to the anchor tag
+        newAnchor.textContent = `Section${i}`;
+        // adding the href to the anchor tag
+        newAnchor.href = `#section${i}`;
+        newListItem.appendChild(newAnchor);
+        // appending the new list item to the navbar list
+        navbarList.appendChild(newListItem);
+    }
 }
 buildNav(4);
 
-document.querySelectorAll('.menu__link').forEach(link=>{
-    link.addEventListener('click',e=>{
+document.querySelectorAll('.menu__link').forEach(link => {
+    link.addEventListener('click', e => {
         e.preventDefault();
-        const targetId=link.getAttribute('href').slice(1);
-        const targetElement=document.getElementById(targetId);
-        targetElement.scrollIntoView({behavior:'smooth'});
+        const targetId = link.getAttribute('href').slice(1);
+        const targetElement = document.getElementById(targetId);
+        targetElement.scrollIntoView({ behavior: 'smooth' });
 
     });
 });
