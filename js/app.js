@@ -22,7 +22,6 @@
 */
 // holding the navbarList by its id 
 const navbarList = document.querySelector('#navbar__list');
-const sections = document.querySelectorAll('section');
 const main = document.querySelector('main');
 const scrollTopBtn = document.createElement('button');
 let isScrolling;
@@ -107,7 +106,6 @@ function createSection(sectionId, sectionTitle, para1Text, para2Text) {
     const section = document.createElement('section');
     section.id = sectionId;
     section.setAttribute("data-nav", sectionTitle);
-
     const sectionDiv = document.createElement('div');
     sectionDiv.classList.add('landing__container');  
 
@@ -136,6 +134,7 @@ createSection(
     "Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non."
 );
 // build the nav
+
 function buildNav(n) {
     for (let i = 1; i <= n; i++) {
         // creating a new list item for each section
@@ -168,6 +167,7 @@ document.querySelectorAll('.menu__link').forEach(link => {
  * Main Functions
  */
 // Add Active Class to Section in Viewport
+const sections = document.querySelectorAll('section');
 function setActiveSection() {
     const threshold = window.innerHeight / 2;
     sections.forEach((section) => {
