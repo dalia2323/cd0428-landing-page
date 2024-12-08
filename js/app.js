@@ -12,12 +12,10 @@
  * JS Standard: ESlint
  * 
 */
-
 /**
  * Comments should be present at the beginning of each procedure and class.
  * Great to have comments before crucial code sections within the procedure.
 */
-
 /**
  * Define Global Variables
  * 
@@ -40,10 +38,8 @@ function hideNavbar() {
     window.addEventListener('scroll', () => {
         // Show the navbar when scrolling
         navbarList.style.display = "block";
-
         // Clear the timeout if still scrolling
         clearTimeout(isScrolling);
-
         // Set a timeout to hide the navbar after 2 seconds of no scrolling
         isScrolling = setTimeout(() => {
             navbarList.style.display = "none";
@@ -102,8 +98,6 @@ function makeSectionsCollapsible() {
         section.insertBefore(button, content);
     });
 }
-
-
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -161,7 +155,6 @@ function buildNav(n) {
     }
 }
 buildNav(4);
-
 document.querySelectorAll('.menu__link').forEach(link => {
     link.addEventListener('click', e => {
         e.preventDefault();
@@ -171,28 +164,27 @@ document.querySelectorAll('.menu__link').forEach(link => {
 
     });
 });
-// 
-
 /**
  * Main Functions
  */
 // Add Active Class to Section in Viewport
 function setActiveSection() {
     const threshold = window.innerHeight / 2;
-
     sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
         const navLink = document.querySelector(`a[href="#${section.id}"]`);
         if (rect.top <= threshold && rect.bottom >= threshold) {
             section.classList.add('your-active-class');
             navLink.classList.add('your-active-class');
+            navLink.style.backgroundColor="#333";
         } else {
             section.classList.remove('your-active-class');
             navLink.classList.remove('your-active-class');
+            navLink.style.backgroundColor="";
+
         }
     });
 }
-
 // Show Scroll-to-Top Button
 function toggleScrollTopButton() {
     if (window.scrollY > window.innerHeight) {
@@ -215,18 +207,5 @@ window.addEventListener('scroll', () => {
 });
 // Hide Navbar While Not Scrolling
 hideNavbar();
-//highlight the select section in navbar
-const links = document.querySelectorAll('.menu__link');
-function highlights(event) {
-    links.forEach((link) => {
-        if (link === event.target) {
-            link.style.backgroundColor = '#333';
-        } else {
-            link.style.backgroundColor = '';
-        }
-    });
-}
-links.forEach((link) => {
-    link.addEventListener('click', highlights);
-});
+
 
