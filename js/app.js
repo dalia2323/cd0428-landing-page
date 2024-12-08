@@ -181,7 +181,6 @@ function setActiveSection() {
     sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
         const navLink = document.querySelector(`a[href="#${section.id}"]`);
-
         if (rect.top <= threshold && rect.bottom >= threshold) {
             section.classList.add('your-active-class');
             navLink.classList.add('your-active-class');
