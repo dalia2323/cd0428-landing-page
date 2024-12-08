@@ -176,11 +176,11 @@ function setActiveSection() {
         if (rect.top <= threshold && rect.bottom >= threshold) {
             section.classList.add('your-active-class');
             navLink.classList.add('your-active-class');
-            navLink.style.backgroundColor="#333";
+            // navLink.style.backgroundColor="#333";
         } else {
             section.classList.remove('your-active-class');
             navLink.classList.remove('your-active-class');
-            navLink.style.backgroundColor="";
+            // navLink.style.backgroundColor="";
 
         }
     });
