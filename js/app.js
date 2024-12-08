@@ -102,6 +102,21 @@ function makeSectionsCollapsible() {
         section.insertBefore(button, content);
     });
 }
+//highlight the select section in navbar
+const links = document.querySelectorAll('.menu__link');
+function highlights(event) {
+    links.forEach((link) => {
+        if (link === event.target) {
+            link.style.backgroundColor = '#333';
+        } else {
+            link.style.backgroundColor = '';
+        }
+    });
+}
+links.forEach((link) => {
+    link.addEventListener('click', highlights);
+});
+
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -213,8 +228,5 @@ window.addEventListener('scroll', () => {
 });
 // Hide Navbar While Not Scrolling
 hideNavbar();
-
-
-
 
 
